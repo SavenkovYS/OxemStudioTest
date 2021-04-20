@@ -1,0 +1,19 @@
+.slide {
+    &__title {
+        margin: 0;
+        margin-bottom: 30px;
+
+        font-family: 'Nekst';
+        font-size: var(--fs-h2);
+        line-height: 29px;
+        font-weight: 900;
+    }
+
+    &__button {
+        min-width: 175px;
+        padding: 12px 20px;
+
+        font-size: 16px;
+        line-height: 24px;
+    }
+}

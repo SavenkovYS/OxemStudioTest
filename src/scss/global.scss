@@ -1,0 +1,33 @@
+:root {
+    --fs-body: 14px;
+    --fs-h2: 32px; 
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-width: 320px;
+
+    font-family: 'Gilroy', sans-serif;
+    font-size: var(--fs-body);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.button {
+    padding: 12px 20px;
+
+    color: #fff;
+    font-weight: 700;
+
+    background-color: #ff9514;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+}
