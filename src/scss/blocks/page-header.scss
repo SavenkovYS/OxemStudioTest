@@ -42,7 +42,7 @@
         transform: translateX(-50%);
         width: 22px;
 
-        border: 3px solid #fff;
+        border-bottom: 3px solid #fff;
         border-top: none;
         border-left: none;
         border-right: none;
@@ -58,6 +58,14 @@
     &__button::after {
         top: 21px;
     }
+
+    &__nav {
+        display: none;
+    }
+
+    &__apply {
+        display: none;
+    }
 }
 
 @media (min-width: 768px) {
@@ -71,9 +79,7 @@
         background-color: #fff;
     
         &__container {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;   
+            justify-content: flex-start; 
         }
 
         &__logo {
@@ -108,40 +114,71 @@
         }
     
         &__button {
-            position: relative;
-            width: 32px;
-            height: 32px;
             margin-left: auto;
-    
-            border: none;
-            background-color: transparent;
-            cursor: pointer;
         }
     
         &__button::before,
         &__button::after {
-            content: '';
-    
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 22px;
-    
-            border: 3px solid #000;
-            border-top: none;
-            border-left: none;
-            border-right: none;
-            border-radius: 10px;
+            border-bottom: 3px solid #000;
         }
     
         &__button::before {
-            top: 5px;
-    
             box-shadow: 0 8px #000;
         }
+    }
+}
+
+@media (min-width: 1024px) {
+    .page-header {
+        padding: 25px 50px;
     
+        &__container {
+            justify-content: flex-start; 
+        }
+
+        &__logo {
+            margin-right: 35px;
+        }
+
+        &__logo::before {
+            bottom: 3px;
+            right: -17px;
+        }
+    
+        &__button {
+            display: none;
+        }
+    
+        &__button::before,
         &__button::after {
-            top: 21px;
+            border-bottom: 3px solid #000;
+        }
+    
+        &__button::before {
+            box-shadow: 0 8px #000;
+        }
+
+        &__nav {
+            display: block;
+            margin-left: auto;
+        }
+
+        &__apply {
+            display: block;
+            width: 175px;
+            margin-left: 25px;
+            padding: 12px 20px;
+
+            font-family: "Gilroy";
+            font-size: 16px;
+            color: #ff9514;
+            font-weight: 700;
+            line-height: 24px;
+
+            background-color: #fff;
+            border: 1px solid #ff9514;
+            border-radius: 40px;
+            cursor: pointer;
         }
     }
 }

@@ -4,7 +4,7 @@
         margin-bottom: 30px;
 
         font-family: 'Nekst';
-        font-size: var(--fs-h2);
+        font-size: 32px;
         line-height: 29px;
         font-weight: 900;
     }
@@ -15,5 +15,25 @@
 
         font-size: 16px;
         line-height: 24px;
+    }
+}
+
+@media (min-width: 768px) {
+    .slide {
+        &__title {    
+            font-size: 54px;
+            line-height: 49px;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .slide {
+        &__title {
+            width: 585px;
+                
+            font-size: 54px;
+            line-height: 49px;
+        }
     }
 }

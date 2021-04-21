@@ -9,3 +9,22 @@
     background-size: auto 260px;
     background-position: left top;
 }
+
+@media (min-width: 768px) {
+    .promo {
+        padding: 230px 45px 25px;
+    
+        background-image: url('../../img/header-bg-md.jpg');
+        background-size: auto;
+        background-position: center top;
+    }
+}
+
+@media (min-width: 1024px) {
+    .promo {
+        padding: 70px 70px 20px;
+    
+        background-image: url('../../img/header-bg-lg.jpg');
+        background-position: right bottom 20px;
+    }
+}

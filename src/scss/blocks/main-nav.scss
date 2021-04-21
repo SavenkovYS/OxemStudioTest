@@ -1,3 +1,21 @@
-.main-nav {
-    display: none;
+@media (min-width: 1024px) {
+    .main-nav {
+        &__list {
+            display: flex;
+            margin: 0;
+            padding: 0;
+
+            list-style: none;
+        }
+
+        &__link {
+            padding: 5px 10px;
+
+            color: #575757;
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+    }
 }
