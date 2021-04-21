@@ -15,3 +15,75 @@
         }
     }
 }
+
+@media (min-width: 1024px) {
+    .slider {
+        position: relative;
+
+        &__list {
+            margin-bottom: 110px;
+        }
+
+        &__controls {
+            position: absolute;
+            bottom: 45px;
+            right: 45px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90px;
+        }
+
+        &__button {
+            position: relative;
+
+            background-color: transparent;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        &__button--next {
+            order: 1;
+            width: 48px;
+            height: 48px;
+        }
+
+        &__button--prev {
+            order: 0;
+            width: 24px;
+            height: 24px;
+        }
+
+        &__button--next::before,
+        &__button--prev::before {
+            content: '';
+
+            position: absolute;
+
+            border-left: 2px solid #fff;
+            border-bottom: 2px solid #fff;
+            border-right: 2px solid transparent;
+            border-top: 2px solid transparent;
+        }
+
+        &__button--next::before {
+            top: 16px;
+            right: 19px;
+            width: 12px;
+            height: 12px;
+
+            transform: rotate(-135deg);
+        }
+
+        &__button--prev::before {
+            top: 7px;
+            left: 8px;
+            width: 6px;
+            height: 6px;
+
+            transform: rotate(45deg);
+        }
+    }
+}
