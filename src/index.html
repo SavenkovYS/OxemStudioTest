@@ -109,5 +109,36 @@
             </form>
         </section> 
     </main>
+    <div class="overlay">
+        <section class="modal">
+            <h2 class="modal__title">Онлайн-заявка</h2>
+            <p class="modal__text">Заполните форму, и мы вскоре свяжемся с вами, чтобы ответить на все вопросы</p>
+            <form class="modal__form" action="#" method="POST">
+                <ul class="modal__form-list">
+                    <li class="modal__form-item">
+                        <label class="modal__label" for="tel">Телефон<span class="modal__star">*</span></label>
+                        <input class="modal__input" id="tel" name="tel" type="tel">
+                    </li>
+                    <li class="modal__form-item">
+                        <label class="modal__label" for="name">Имя</label>
+                        <input class="modal__input" id="name" name="name" type="text">
+                    </li>
+                </ul>
+                <button class="modal__submit">Оставить заявку</button>
+            </form>
+            <p class="modal__agreement">Нажимая на кнопку «Оставить заявку», я даю согласие 
+                <a href="#" class="modal__agreement-link" target="_blank">на обработку персональных данных</a>
+            </p>
+            <ul class="modal__social-list">
+                <li class="modal__social-item">
+                    <a href="#" class="modal__social-link modal__social-link--whatsapp" aria-label="Вотсап"></a>
+                </li>
+                <li class="modal__social-item">
+                    <a href="#" class="modal__social-link modal__social-link--telegram" aria-label="Телеграм"></a>
+                </li>
+            </ul>
+            <button class="modal__close" aria-label="Закрыть окно"></button>
+        </section>
+    </div>
  </body>
 </html>
