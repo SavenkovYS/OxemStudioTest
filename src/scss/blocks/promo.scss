@@ -28,3 +28,10 @@
         background-position: right bottom 20px;
     }
 }
+
+@media (min-width: 1440px) {
+    .promo {
+        background-image: url('../../img/header-bg-xl.jpg');
+        background-position: right bottom;
+    }
+}
