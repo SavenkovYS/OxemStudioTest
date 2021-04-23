@@ -101,5 +101,27 @@
 
             transform: rotate(45deg);
         }
+
+        &__progress {
+            width: 48px; 
+            height: 48px;
+            transform: translate(-50%, -50%) rotate(-90deg);
+        }
+
+        &__circle {
+            fill: transparent;
+            stroke: red;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-dasharray: 150;
+            stroke-dashoffset: 500;
+            animation: animate 10s linear infinite;
+        }
+    }
+}
+
+@keyframes animate {
+    100% {
+        stroke-dashoffset: 0;
     }
 }

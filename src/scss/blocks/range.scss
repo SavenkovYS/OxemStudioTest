@@ -3,6 +3,7 @@
     flex-direction: column;
     justify-content: center;
     height: 30px;
+    cursor: pointer;
 
     &__line {
         width: 100%;
@@ -24,5 +25,34 @@
         background-color: #ff9514;
         border-radius: 50%;
         cursor: pointer;
+    }
+
+    &:hover &__line,
+    &:focus &__line {
+        height: 1px;
+    }
+
+    &:hover &__pin,
+    &:focus &__pin {
+        bottom: 3px;
+
+        width: 24px;
+        height: 24px;
+
+        margin-left: -12px;
+    }
+
+    &:active &__pin {
+        bottom: 5px;
+
+        width: 20px;
+        height: 20px;
+
+        margin-left: -10px;
+    }
+
+    &:disabled &__pin,
+    &:disabled &__line {
+        background-color: rgba(#ff9514, 0.4);
     }
 }

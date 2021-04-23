@@ -4,6 +4,7 @@
     left: 0;
     width: 100%;
     padding: 25px 20px;
+    max-height: 80vh;
 
     color: #000;
 
@@ -59,9 +60,8 @@
 
     &__label {
         position: absolute;
-        top: 50%;
+        top: 19px;
         left: 24px;
-        transform: translateY(-50%);
 
         font-size: 16px;
         line-height: 24px;
@@ -83,8 +83,48 @@
         color: rgba(#575757, 1);
 
         background-color: #f3f3f4;
-        border: none;
+        border: 1px solid #f3f3f4;
         border-radius: 16px;
+    }
+
+    &__input:hover {
+        background-color: #eaeaeb;
+        border: 1px solid #eaeaeb;
+    }
+
+    &__input:active,
+    &__input:focus {
+        outline: none;
+        border: 1px solid #ff9514;
+
+        box-shadow: 0 0 0 4px rgba(#ff9514, 0.2);
+    }
+    &__label--not-empty,
+    &__input:hover + &__label,
+    &__input:focus + &__label,
+    &__input:active + &__label {
+        top: 12px;
+        font-size: 12px;
+        line-height: 12px;
+    }
+
+    &__input:disabled {
+        color: rgba(#575757, 0.4);
+
+        background-color: rgba(#f3f3f4, 0.4);
+        border: 1px solid rgba(#f3f3f4, 0.4);
+    }
+
+    &__input--error {
+        border: 1px solid #D53234;
+    }
+
+    &__error {
+        display: none;
+        margin: 0;
+        margin-top: 5px;
+
+        color: #D53234;
     }
 
     &__submit {
@@ -190,6 +230,15 @@
     &__close::after {
         transform: rotate(45deg);
     }
+
+    &__close:hover,
+    &__close:focus {
+        background-color: #111;
+    }
+
+    &__close:active {
+        background-color: rgba(#111, 0.4);
+    }
 }
 
 @media (min-width: 768px) {
@@ -254,6 +303,19 @@
             margin-bottom: 0;
     
             line-height: 21px;
+        }
+
+        &__close {
+            width: 48px;
+            height: 48px;
+        }
+    
+        &__close::before,
+        &__close::after {
+            top: 23px;
+            left: 14px;
+    
+            width: 19px;
         }
     }
 }

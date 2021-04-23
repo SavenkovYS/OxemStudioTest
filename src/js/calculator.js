@@ -3,8 +3,10 @@ const creditInput = document.querySelector('#credit');
 const initialPaymentInput = document.querySelector('#initial-payment');
 const termInput = document.querySelector('#term');
 const initialPaymentOutput = document.querySelector('.price-count__payment-result');
-const monthlyPaymentOutput = document.querySelector('.price-count__total--payment');
-const priceOutput = document.querySelector('.price-count__total--sum');
+const monthlyPaymentOutput = document.querySelector('.price-count__result--payment');
+const priceOutput = document.querySelector('.price-count__result--sum');
+const submitBtn = document.querySelector('.price-count__submit');
+const form = document.querySelector('.price-count__form');
 
 const MAX_PRICE = 6000000;
 const MIN_PRICE = 1000000;
@@ -54,11 +56,11 @@ calculatorItems.forEach(calculatorItem => {
     rangeLine.style.backgroundImage = `linear-gradient(to right, #ff9514 0%, #ff9514 ${backgroundImageValue}%, #e1e1e1 ${backgroundImageValue}%, #e1e1e1)`;
 
     function updateFieldOnChange(input, minValue, maxValue) {
-        if (input.value > maxValue) {
+        if (parseInt(input.value) > maxValue) {
             input.value = maxValue;
         }
 
-        if (input.value < minValue) {
+        if (parseInt(input.value) < minValue) {
             input.value = minValue;
         }
 
@@ -66,8 +68,8 @@ calculatorItems.forEach(calculatorItem => {
             input.value += '%';
         }
 
-        rangePin.style.left = `${(input.value - minValue) / (maxValue - minValue) * 100}%`;
-        backgroundImageValue = `${(input.value - minValue) / (maxValue -  minValue) * 100}`;
+        rangePin.style.left = `${(parseInt(input.value) - minValue) / (maxValue - minValue) * 100}%`;
+        backgroundImageValue = `${(parseInt(input.value) - minValue) / (maxValue -  minValue) * 100}`;
         rangeLine.style.backgroundImage = `linear-gradient(to right, #ff9514 0%, #ff9514 ${backgroundImageValue}%, #e1e1e1 ${backgroundImageValue}%, #e1e1e1)`;
 
         displayInitialPayment()
@@ -142,6 +144,16 @@ calculatorItems.forEach(calculatorItem => {
             document.removeEventListener('mouseup', handleMousedown);
         }
     });
+})
+
+form.addEventListener('submit', evt => {
+    evt.preventDefault();
+    fetch('somePhpScenerio.php', {
+        method: 'POST',
+        body: new FormData(form)
+    })
+        .then (response => console.log(response))
+        .catch(error => console.error(error))
 })
 
 

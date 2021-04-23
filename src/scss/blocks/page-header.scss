@@ -23,7 +23,7 @@
         display: none;
     }
 
-    &__button {
+    &__toggle {
         z-index: 10;
         position: relative;
         width: 32px;
@@ -34,8 +34,8 @@
         cursor: pointer;
     }
 
-    &__button::before,
-    &__button::after {
+    &__toggle::before,
+    &__toggle::after {
         content: '';
 
         position: absolute;
@@ -50,11 +50,11 @@
         border-radius: 10px;
     }
 
-    &__button::before {
+    &__toggle::before {
         transform: rotate(-45deg);
     }
 
-    &__button::after {
+    &__toggle::after {
         transform: rotate(45deg);
     }
 }
@@ -105,7 +105,7 @@
             margin: 0;
         }
     
-        &__button {
+        &__toggle {
             margin-left: auto;
         }
     }
@@ -114,19 +114,19 @@
 @media (max-width: 1023px) {
     .page-header {
 
-        &__button--closed::before,
-        &__button--closed::after {
+        &__toggle--closed::before,
+        &__toggle--closed::after {
             border-bottom: 3px solid #000;
             transform: none;
         }
     
-        &__button--closed::before {
+        &__toggle--closed::before {
             top: 5px;
 
             box-shadow: 0 8px #000;
         }
 
-        &__button--closed::after {
+        &__toggle--closed::after {
             top: 21px;
 
             width: 16px;
@@ -136,12 +136,12 @@
 
 @media (max-width: 767px) {
     .page-header {
-        &__button--closed::before,
-        &__button--closed::after {
+        &__toggle--closed::before,
+        &__toggle--closed::after {
             border-bottom: 3px solid #fff; 
         }
 
-        &__button--closed::before {
+        &__toggle--closed::before {
             box-shadow: 0 8px #fff;
         }
     }
@@ -164,7 +164,7 @@
             right: -17px;
         }
     
-        &__button {
+        &__toggle {
             display: none;
         }
 

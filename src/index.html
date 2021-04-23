@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/style.min.css" rel="stylesheet">
-    <title>Document</title>
+    <title>Leasing Car</title>
+    <meta name="description" content="Лизинговый сайт"/>
 </head>
 <body>
     <header class="page-header">
@@ -25,7 +26,7 @@
                 </svg>
             </a>
             <p class="page-header__activity">Лизинговая компания</p>
-            <button class="page-header__button" aria-label="Открыть меню"></button>
+            <button class="page-header__toggle" aria-label="Открыть меню"></button>
             <nav class="page-header__nav main-nav">
                 <div class="main-nav__container">
                     <ul class="main-nav__list">
@@ -50,7 +51,7 @@
                             <a href="#" class="main-nav__link">О нас</a>
                         </li>
                     </ul>
-                    <button class="main-nav__apply button button-apply">Оставить заявку</button>
+                    <button class="main-nav__apply button button--secondary button-apply">Оставить заявку</button>
                 </div>
             </nav>
         </div>
@@ -62,32 +63,32 @@
                     <li class="slider__item slide">
                         <h1 class="slide__title">Авто в лизинг для физических лиц</h1>
                         <p class="slide__text">Получите машину за 5 дней</p>
-                        <button class="slide__button button button-apply">Оставить заявку</button>
+                        <button class="slide__button button button--primary button-apply">Оставить заявку</button>
                     </li>
                     <li class="slider__item slide">
                         <h1 class="slide__title">Второй слайд</h1>
                         <p class="slide__text">Текст для второго слайда</p>
-                        <button class="slide__button button">Оставить заявку</button>
+                        <button class="slide__button button button--primary">Оставить заявку</button>
                     </li>
                     <li class="slider__item slide">
                         <h1 class="slide__title">Третий слайд</h1>
                         <p class="slide__text">Текст для третьего слайда</p>
-                        <button class="slide__button button">Оставить заявку</button>
+                        <button class="slide__button button button--primary">Оставить заявку</button>
                     </li>
                     <li class="slider__item slide">
                         <h1 class="slide__title">Четвертый слайд</h1>
                         <p class="slide__text">Текст для четвертый слайда</p>
-                        <button class="slide__button button">Оставить заявку</button>
+                        <button class="slide__button button button--primary">Оставить заявку</button>
                     </li>
                     <li class="slider__item slide">
                         <h1 class="slide__title">Пятый слайд</h1>
                         <p class="slide__text">Текст для пятый слайда</p>
-                        <button class="slide__button button">Оставить заявку</button>
+                        <button class="slide__button button button--primary">Оставить заявку</button>
                     </li>
                     <li class="slider__item slide">
                         <h1 class="slide__title">Шестой слайд</h1>
                         <p class="slide__text">Текст для шестой слайда</p>
-                        <button class="slide__button button">Оставить заявку</button>
+                        <button class="slide__button button button--primary">Оставить заявку</button>
                     </li>
                 </ul>
             </div>
@@ -160,14 +161,14 @@
                 <ul class="price-count__result-list">
                     <li class="price-count__result-item">
                         <p class="price-count__result-text">Сумма договора лизинга</p>
-                        <p class="price-count__total price-count__total--sum">10000</p>
+                        <p class="price-count__result price-count__result--sum">10000</p>
                     </li>
                     <li class="price-count__result-item">
                         <p class="price-count__result-text">Ежемесячный платеж от</p>
-                        <p class="price-count__total price-count__total--payment">1000</p>
+                        <p class="price-count__result price-count__result--payment">1000</p>
                     </li>
                 </ul>
-                <button class="price-count__submit button button button-apply">Оставить заявку</button>
+                <button class="price-count__submit button button button--primary button-apply">Оставить заявку</button>
             </form>
         </section> 
     </main>
@@ -178,16 +179,18 @@
             <form class="modal__form" action="#" method="POST">
                 <ul class="modal__form-list">
                     <li class="modal__form-item">
-                        <label class="modal__label" for="tel">Телефон<span class="modal__star">*</span></label>
-                        <input class="modal__input" id="tel" name="tel" type="tel">
+                        <input class="modal__input" id="tel" name="tel" type="tel" required>
+                        <label class="modal__label modal__label--tel" for="tel">Телефон<span class="modal__star">*</span></label>
+                        <p class="modal__error">Неправильно заполнено поле</p>
                     </li>
                     <li class="modal__form-item">
+                        <input class="modal__input" id="name" name="name" type="text" required>
                         <label class="modal__label" for="name">Имя</label>
-                        <input class="modal__input" id="name" name="name" type="text">
+                        <p class="modal__error">Неправильно заполнено поле</p>
                     </li>
                 </ul>
                 <div class="modal__submit-container">
-                <button class="modal__submit">Оставить заявку</button>
+                <button class="modal__submit button button--primary">Оставить заявку</button>
                     <p class="modal__agreement">Нажимая на кнопку «Оставить заявку», я даю согласие 
                         <a href="#" class="modal__agreement-link" target="_blank">на обработку персональных данных</a>
                     </p>
@@ -208,5 +211,7 @@
     <script src="js/sllider.js"></script>
     <script src="js/calculator.js"></script>
     <script src="js/popup.js"></script>
+    <script src="js/inputmask.min.js"></script>
+    <script src="js/mask.js"></script>
  </body>
 </html>
