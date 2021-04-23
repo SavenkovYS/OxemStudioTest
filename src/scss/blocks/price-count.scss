@@ -13,7 +13,7 @@
 
     &__list {
         margin: 0;
-        margin-bottom: 15px;
+        margin-bottom: 20px;
         padding: 0;
 
         list-style: none;
@@ -35,12 +35,59 @@
         line-height: 19px; 
     }
 
-    &__input {
+    &__item-container {
+        position: relative;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         padding: 15px 20px;
 
         background-color: #f3f3f4;
         border: none;
         border-radius: 16px;
+    }
+
+    &__item-container--payment {
+        padding: 6px 5px 6px 20px;
+    }
+
+    &__input,
+    &__currency,
+    &__term,
+    &__payment-result {
+        font-family: "Nekst";
+        font-size: 22px;
+        color: #333E48;
+        font-weight: 900;
+    }
+
+    &__input {
+        border: none;
+        background-color: transparent;
+    }
+
+    &__input {
+        width: 80%;
+    }
+
+    &__input--payment {
+        order: 2;
+        padding: 10px;
+        width: 80px;
+
+        text-align: center;
+
+        background-color: rgba(#e0e0e0, 0.4);
+        border-radius: 12px;
+    }
+
+    &__range {
+        position: absolute;
+        bottom: -14px;
+        left: 15px;
+
+        width: calc(100% - 30px);
     }
 
     &__result-list {
@@ -60,11 +107,22 @@
         margin-bottom: 25px;
     }
 
-    &__result-label {
+    &__result-text {
+        margin: 0;
         margin-bottom: 5px;
 
         line-height: 19px;
         color: #333333;
+    }
+
+    &__total {
+        margin: 0;
+
+        font-family: "Nekst";
+        font-size: 22px;
+        line-height: 20px;
+        color: #333;
+        font-weight: 900;
     }
 
     &__submit {
@@ -112,9 +170,21 @@
             font-size: 16px;
             line-height: 20px; 
         }
-    
-        &__input {
+
+        &__item-container {
             padding: 15px 25px;
+        }
+    
+        &__item-container--payment {
+            padding: 6px 5px 6px 25px;
+        }
+
+        &__input,
+        &__currency,
+        &__term,
+        &__payment-result {
+            font-size: 30px;
+            line-height: 36px;
         }
     
         &__result-list {
@@ -137,9 +207,14 @@
             margin-right: 80px;
         }
     
-        &__result-label {        
+        &__result-text {        
             font-size: 16px;
             line-height: 24px;
+        }
+
+        &__total {
+            font-size: 54px;
+            line-height: 49px;
         }
     
         &__submit {
@@ -163,7 +238,7 @@
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1440px) {
     .price-count {
         padding: 100px 0 130px;
 

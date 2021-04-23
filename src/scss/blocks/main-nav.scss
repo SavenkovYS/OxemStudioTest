@@ -1,21 +1,184 @@
-@media (min-width: 1024px) {
-    .main-nav {
-        &__list {
-            display: flex;
-            margin: 0;
-            padding: 0;
+.main-nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
 
-            list-style: none;
+    background-color: rgba(#000, 0.4);
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        margin-left: auto;
+        padding: 65px 25px 25px;
+
+        color: #000;
+
+        transform: translateX(0);
+        transition: transform 0.3s ease-in-out;
+        background-color: #fff;
+        border-radius: 32px 0 0 0;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+
+        list-style: none;   
+    }
+
+    &__item:not(:last-child) {
+        margin-bottom: 30px;
+    }
+
+    &__link {
+        display: block;
+
+        color: #575757;
+        font-size: 24px;
+        line-height: 24px;
+        font-weight: 700;
+        text-decoration: none;
+    }
+
+    &__sublist {
+        display: none;
+    }
+
+    &__apply {
+        display: block;
+        width: 100%;
+        margin-top: auto;
+        padding: 12px 20px;
+
+        font-family: "Gilroy";
+        font-size: 16px;
+        color: #fff;
+        font-weight: 700;
+        line-height: 24px;
+
+        background-color: #ff9514;
+        border: none;
+        border-radius: 40px;
+        cursor: pointer;
+    }
+}
+
+
+
+@media (min-width: 768px) {
+    .main-nav {
+
+        &__container {
+            max-width: 350px;
+            padding: 65px 45px 45px;
+        }
+    }
+}
+
+@media (max-width: 1023px) {
+    .main-nav {
+        &--closed {
+            width: 0;
+            visibility: hidden;
         }
 
-        &__link {
-            padding: 5px 10px;
+        &--closed &__container {
+            transform: translateX(100vw);
+        }
+    }
+}
 
-            color: #575757;
+@media (min-width: 1024px) {
+    .main-nav {
+        position: static;
+        width: auto;
+        height: auto;
+        overflow: visible;
+        background-color: transparent;
+    
+        &__container {
+            flex-direction: row;
+            padding: 0;
+            width: auto;
+            max-width: none;
+            height: auto;
+
+            background-color: transparent;
+            border-radius: 0;
+        }
+    
+        &__list {
+            position: relative;
+
+            flex-direction: row; 
+            align-items: center;
+        }
+    
+        &__item:not(:last-child) {
+            margin-bottom: 0;
+        }
+    
+        &__link {
+            display: block;
+            min-width: max-content;
+            padding: 5px 15px;
+
+            font-size: 16px;
+        }
+
+        &__sublist {
+            position: absolute;
+            top: 42px;
+            left: 0;
+            z-index: 20;
+
+            padding: 0;
+            margin: 0;
+
+            color: #000; 
+
+            list-style: none;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0px 4px 4px rgba(51, 51, 51, 0.04), 
+                        0px 14px 24px rgba(51, 51, 51, 0.12);
+            transition: max-height 0.3s ease-in-out;
+        }
+
+        &__link--leasing:hover ~ &__sublist,
+        &__sublist:hover {
+            display: block;
+        }
+
+        &__sublink {
+            display: block;
+            padding: 8px 16px;
+
+            color: #111;
+            text-decoration: none;
             font-size: 16px;
             line-height: 24px;
-            font-weight: 700;
-            text-decoration: none;
+        }
+    
+        &__apply {
+            min-width: max-content;
+            width: 175px;
+            margin-top: 0;
+            margin-left: 25px;
+
+            color: #ff9514;
+
+            background-color: #fff;
+            border: 1px solid #ff9514;
         }
     }
 }

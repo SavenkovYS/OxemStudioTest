@@ -27,30 +27,70 @@
             <p class="page-header__activity">Лизинговая компания</p>
             <button class="page-header__button" aria-label="Открыть меню"></button>
             <nav class="page-header__nav main-nav">
-                <ul class="main-nav__list">
-                    <li class="main-nav__item">
-                        <a href="#" class="main-nav__link">Лизинг</a>
-                    </li>
-                    <li class="main-nav__item">
-                        <a href="#" class="main-nav__link">Каталог</a>
-                    </li>
-                    <li class="main-nav__item">
-                        <a href="#" class="main-nav__link">О нас</a>
-                    </li>
-                </ul>
+                <div class="main-nav__container">
+                    <ul class="main-nav__list">
+                        <li class="main-nav__item">
+                            <a href="#" class="main-nav__link main-nav__link--leasing">Лизинг</a>
+                            <ul class="main-nav__sublist">
+                                <li class="main-nav__subitem">
+                                    <a href="" class="main-nav__sublink">Для личного пользования</a>
+                                </li>
+                                <li class="main-nav__subitem">
+                                    <a href="" class="main-nav__sublink">Для юридических лиц</a>
+                                </li>
+                                <li class="main-nav__subitem">
+                                    <a href="#calculator" class="main-nav__sublink">Калькулятор</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="main-nav__item">
+                            <a href="#" class="main-nav__link">Каталог</a>
+                        </li>
+                        <li class="main-nav__item">
+                            <a href="#" class="main-nav__link">О нас</a>
+                        </li>
+                    </ul>
+                    <button class="main-nav__apply button button-apply">Оставить заявку</button>
+                </div>
             </nav>
-            <button class="page-header__apply">Оставить заявку</button>
         </div>
     </header>
     <main class="page-main">
         <section class="promo slider">
-            <ul class="slider__list">
-                <li class="slider__item slide">
-                    <h1 class="slide__title">Авто в лизинг для физических лиц</h1>
-                    <p class="slide__text">Получите машину за 5 дней</p>
-                    <button class="slide__button button">Оставить заявку</button>
-                </li>
-            </ul>
+            <div class="slider__container">
+                <ul class="slider__list">
+                    <li class="slider__item slide">
+                        <h1 class="slide__title">Авто в лизинг для физических лиц</h1>
+                        <p class="slide__text">Получите машину за 5 дней</p>
+                        <button class="slide__button button button-apply">Оставить заявку</button>
+                    </li>
+                    <li class="slider__item slide">
+                        <h1 class="slide__title">Второй слайд</h1>
+                        <p class="slide__text">Текст для второго слайда</p>
+                        <button class="slide__button button">Оставить заявку</button>
+                    </li>
+                    <li class="slider__item slide">
+                        <h1 class="slide__title">Третий слайд</h1>
+                        <p class="slide__text">Текст для третьего слайда</p>
+                        <button class="slide__button button">Оставить заявку</button>
+                    </li>
+                    <li class="slider__item slide">
+                        <h1 class="slide__title">Четвертый слайд</h1>
+                        <p class="slide__text">Текст для четвертый слайда</p>
+                        <button class="slide__button button">Оставить заявку</button>
+                    </li>
+                    <li class="slider__item slide">
+                        <h1 class="slide__title">Пятый слайд</h1>
+                        <p class="slide__text">Текст для пятый слайда</p>
+                        <button class="slide__button button">Оставить заявку</button>
+                    </li>
+                    <li class="slider__item slide">
+                        <h1 class="slide__title">Шестой слайд</h1>
+                        <p class="slide__text">Текст для шестой слайда</p>
+                        <button class="slide__button button">Оставить заявку</button>
+                    </li>
+                </ul>
+            </div>
             <div class="slider__controls">
                 <button class="slider__button slider__button--next" aria-label="Следующий слайд"></button>
                 <button class="slider__button slider__button--prev" aria-label="Предыдущий слайд"></button>
@@ -78,39 +118,61 @@
                 </ol>
             </div>
         </section>
-        <section class="price-count"> 
+        <section class="price-count" id="calculator"> 
             <h2 class="price-count__title">Рассчитайте стоимость автомобиля в лизинг</h2>
             <form class="price-count__form" action="#" method="POST">
                 <ul class="price-count__list">
                     <li class="price-count__item">
                         <label class="price-count__label" for="credit">Желаемая сумма кредита</label>
-                        <input class="price-count__input" id="credit" name="credit" type="text">
+                        <div class="price-count__item-container">
+                            <input class="price-count__input" id="credit" name="credit" type="text" placeholder="3 300 000">
+                            <span class="price-count__currency">₽</span>
+                            <div class="price-count__range price-count__range--credit range">
+                                <div class="range__line"></div>
+                                <div class="range__pin" tabindex="1"></div>
+                            </div>
+                        </div>
                     </li>
                     <li class="price-count__item">
                         <label class="price-count__label" for="initial-payment">Первоначальный взнос</label>
-                        <input class="price-count__input" id="initial-payment" name="initial-payment" type="text">
+                        <div class="price-count__item-container price-count__item-container--payment">
+                            <input class="price-count__input price-count__input--payment" id="initial-payment" name="initial-payment" type="text" placeholder="10%">
+                            <span class="price-count__payment-result">420 000 ₽</span>
+                            <div class="price-count__range price-count__range--initial-payment range">
+                                <div class="range__line"></div>
+                                <div class="range__pin" tabindex="1"></div>
+                            </div>
+                        </div>              
                     </li>
                     <li class="price-count__item">
                         <label class="price-count__label" for="term">Срок лизинга</label>
-                        <input class="price-count__input" id="term" name="term" type="text">
+                        <div class="price-count__item-container price-count__item-container--term">
+                            <input class="price-count__input" id="term" name="term" type="text">
+                            <span class="price-count__term">мес.</span>
+                            <div class="price-count__range price-count__range--term range">
+                                <div class="range__line"></div>
+                                <div class="range__pin" tabindex="1"></div>
+                            </div>
+                        </div>
+                        
                     </li>
                 </ul>
                 <ul class="price-count__result-list">
                     <li class="price-count__result-item">
-                        <label class="price-count__result-label" for="sum">Сумма договора лизинга</label>
-                        <input class="price-count__result-input" id="sum" name="sum" type="text" readonly tabindex="-1">
+                        <p class="price-count__result-text">Сумма договора лизинга</p>
+                        <p class="price-count__total price-count__total--sum">10000</p>
                     </li>
                     <li class="price-count__result-item">
-                        <label class="price-count__result-label" for="monthly-payment">Ежемесячный платеж от</label>
-                        <input class="price-count__result-input" id="monthly-payment" name="monthly-payment" type="text" readonly tabindex="-1">
+                        <p class="price-count__result-text">Ежемесячный платеж от</p>
+                        <p class="price-count__total price-count__total--payment">1000</p>
                     </li>
                 </ul>
-                <button class="price-count__submit button">Оставить заявку</button>
+                <button class="price-count__submit button button button-apply">Оставить заявку</button>
             </form>
         </section> 
     </main>
-    <div class="overlay">
-        <section class="modal">
+    <div class="overlay overlay--closed">
+        <section class="modal modal--closed">
             <h2 class="modal__title">Онлайн-заявка</h2>
             <p class="modal__text">Заполните форму, и мы вскоре свяжемся с вами, чтобы ответить на все вопросы</p>
             <form class="modal__form" action="#" method="POST">
@@ -142,5 +204,9 @@
             <button class="modal__close" aria-label="Закрыть окно"></button>
         </section>
     </div>
+    <script src="js/menu.js"></script>
+    <script src="js/sllider.js"></script>
+    <script src="js/calculator.js"></script>
+    <script src="js/popup.js"></script>
  </body>
 </html>

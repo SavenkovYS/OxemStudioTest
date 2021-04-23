@@ -1,10 +1,26 @@
 .slider {
+    
+    &__container {
+        overflow: hidden;
+    }
+
     &__list {
+        display: flex;
+        width: 600%;
         margin: 0;
         margin-bottom: 50px;
         padding: 0;
 
         list-style: none;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    &__item {
+        width: 100%;
+    }
+
+    &__controls {
+        display: none;
     }
 }
 

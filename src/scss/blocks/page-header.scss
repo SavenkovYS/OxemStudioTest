@@ -1,6 +1,7 @@
 .page-header {
-    position: absolute;
-
+    position: fixed;
+    z-index: 30;
+    
     width: 100%;
     padding: 20px;
     
@@ -12,7 +13,6 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        
     }
     
     &__logo-car {
@@ -24,6 +24,7 @@
     }
 
     &__button {
+        z-index: 10;
         position: relative;
         width: 32px;
         height: 32px;
@@ -38,11 +39,11 @@
         content: '';
 
         position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
+        top: 15px;
+        left: 5px;
         width: 22px;
 
-        border-bottom: 3px solid #fff;
+        border-bottom: 3px solid #000;
         border-top: none;
         border-left: none;
         border-right: none;
@@ -50,34 +51,25 @@
     }
 
     &__button::before {
-        top: 5px;
-
-        box-shadow: 0 8px #fff;
+        transform: rotate(-45deg);
     }
 
     &__button::after {
-        top: 21px;
-    }
-
-    &__nav {
-        display: none;
-    }
-
-    &__apply {
-        display: none;
+        transform: rotate(45deg);
     }
 }
 
 @media (min-width: 768px) {
     .page-header {
-        position: static;
+        position: sticky;
+        top: 0;
     
         padding: 20px 35px;
         
         color: #000;
     
         background-color: #fff;
-    
+
         &__container {
             justify-content: flex-start; 
         }
@@ -116,14 +108,41 @@
         &__button {
             margin-left: auto;
         }
-    
-        &__button::before,
-        &__button::after {
+    }
+}
+
+@media (max-width: 1023px) {
+    .page-header {
+
+        &__button--closed::before,
+        &__button--closed::after {
             border-bottom: 3px solid #000;
+            transform: none;
         }
     
-        &__button::before {
+        &__button--closed::before {
+            top: 5px;
+
             box-shadow: 0 8px #000;
+        }
+
+        &__button--closed::after {
+            top: 21px;
+
+            width: 16px;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .page-header {
+        &__button--closed::before,
+        &__button--closed::after {
+            border-bottom: 3px solid #fff; 
+        }
+
+        &__button--closed::before {
+            box-shadow: 0 8px #fff;
         }
     }
 }
@@ -148,37 +167,10 @@
         &__button {
             display: none;
         }
-    
-        &__button::before,
-        &__button::after {
-            border-bottom: 3px solid #000;
-        }
-    
-        &__button::before {
-            box-shadow: 0 8px #000;
-        }
 
         &__nav {
             display: block;
             margin-left: auto;
-        }
-
-        &__apply {
-            display: block;
-            width: 175px;
-            margin-left: 25px;
-            padding: 12px 20px;
-
-            font-family: "Gilroy";
-            font-size: 16px;
-            color: #ff9514;
-            font-weight: 700;
-            line-height: 24px;
-
-            background-color: #fff;
-            border: 1px solid #ff9514;
-            border-radius: 40px;
-            cursor: pointer;
         }
     }
 }
