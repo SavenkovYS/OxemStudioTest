@@ -1,5 +1,5 @@
 .promo {
-    padding: 250px 20px 25px;
+    padding: 250px 20px 25px 0;
 
     color: #fff;
 
@@ -13,7 +13,7 @@
 
 @media (min-width: 768px) {
     .promo {
-        padding: 230px 45px 25px;
+        padding: 230px 45px 25px 25px;
     
         background-image: url('../../img/header-bg-md.jpg');
         background-size: auto;
@@ -23,7 +23,7 @@
 
 @media (min-width: 1024px) {
     .promo {
-        padding: 70px 70px 45px;
+        padding: 70px 70px 45px 50px;
     
         background-image: url('../../img/header-bg-lg.jpg');
         background-position: right bottom 20px;

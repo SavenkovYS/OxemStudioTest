@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    <title>Leasing Car</title>
+    <meta name="description" content="Лизинговый сайт">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/normalize.css">
     <link href="css/style.min.css" rel="stylesheet">
-    <title>Leasing Car</title>
-    <meta name="description" content="Лизинговый сайт"/>
 </head>
 <body>
     <header class="page-header">
         <div class="page-header__container">
-            <a class="page-header__logo">
+            <div class="page-header__logo">
                 <svg class="page-header__img" width="166" height="29" viewBox="0 0 166 29" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M0 22.5494H15.5027V17.5384H5.16758V1.56593H0V22.5494Z" fill="#FF9514"/>
                     <path d="M24.3263 6.42032C19.5032 6.42032 16.1208 10.022 16.1208 14.7198C16.1208 19.1044 18.8768 23.0192 24.2323 23.0192C27.9592 23.0192 31.1851 21.1088 32.1872 17.5384H27.1449C26.6438 18.3214 25.3598 18.8225 24.1697 18.7285C22.3532 18.572 21.3197 17.5071 21.0065 16.317H32.2812C32.9076 10.617 29.5565 6.42032 24.3263 6.42032ZM24.2949 10.6797C25.8296 10.6797 27.051 11.4 27.4895 12.7154H21.0691C21.5076 11.4626 22.729 10.6797 24.2949 10.6797Z" fill="#FF9514"/>
@@ -24,7 +25,7 @@
                     <path class="page-header__logo-car" d="M146.973 8.80058H146.847C145.908 7.45388 144.185 6.42036 142.024 6.42036C137.734 6.42036 134.79 9.95937 134.79 14.7824C134.79 19.7308 137.922 23.0192 142.024 23.0192C144.185 23.0192 145.908 21.9857 146.847 20.639H146.973V22.5495H151.796V6.89014H146.973V8.80058ZM143.34 18.4467C141.273 18.4467 139.707 16.9121 139.707 14.7198C139.707 12.5275 141.273 10.9929 143.34 10.9929C145.438 10.9929 146.973 12.5901 146.973 14.7198C146.973 16.7555 145.501 18.4467 143.34 18.4467Z" fill="#000"/>
                     <path class="page-header__logo-car" d="M162.524 6.89014C160.926 6.89014 159.642 7.8297 159.204 9.23904H159.079V6.89014H154.475V22.5495H159.329V14.6258C159.329 12.966 160.55 11.7445 162.21 11.7445H166V6.89014H162.524Z" fill="#000"/>
                 </svg>
-            </a>
+            </div>
             <p class="page-header__activity">Лизинговая компания</p>
             <button class="page-header__toggle" aria-label="Открыть меню"></button>
             <nav class="page-header__nav main-nav">
@@ -63,37 +64,53 @@
                     <li class="slider__item slide">
                         <h1 class="slide__title">Авто в лизинг для физических лиц</h1>
                         <p class="slide__text">Получите машину за 5 дней</p>
-                        <button class="slide__button button button--primary button-apply">Оставить заявку</button>
+                        <button class="slide__button button button-apply">Оставить заявку</button>
                     </li>
                     <li class="slider__item slide">
                         <h1 class="slide__title">Второй слайд</h1>
                         <p class="slide__text">Текст для второго слайда</p>
-                        <button class="slide__button button button--primary">Оставить заявку</button>
+                        <button class="slide__button button" tabindex="-1" disabled>Неактивная кнопка</button>
                     </li>
                     <li class="slider__item slide">
                         <h1 class="slide__title">Третий слайд</h1>
                         <p class="slide__text">Текст для третьего слайда</p>
-                        <button class="slide__button button button--primary">Оставить заявку</button>
+                        <button class="slide__button button slide__button--loading" tabindex="-1">
+                            <span class="slide__button-text">Кнопка с загрузкой</span>
+                            <svg class="slide__loading-icon" width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13.8691 19.3825C11.9455 20.1121 9.83718 20.1976 7.86093 19.6261C5.88468 19.0546 4.14734 17.857 2.91009 16.2134C1.67285 14.5698 1.00256 12.569 1.00001 10.5118C0.99745 8.45459 1.66276 6.45212 2.89591 4.80546C4.12906 3.15879 5.86342 1.95691 7.83825 1.38051C9.81307 0.804109 11.9216 0.88433 13.847 1.60911C15.7723 2.3339 17.4103 3.66408 18.5148 5.39968C19.6193 7.13528 20.1305 9.18251 19.9716 11.2336" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
                     </li>
                     <li class="slider__item slide">
                         <h1 class="slide__title">Четвертый слайд</h1>
-                        <p class="slide__text">Текст для четвертый слайда</p>
-                        <button class="slide__button button button--primary">Оставить заявку</button>
+                        <p class="slide__text">Текст для четвертого слайда</p>
+                        <button class="slide__button button" tabindex="-1">Просто кнопка</button>
                     </li>
                     <li class="slider__item slide">
                         <h1 class="slide__title">Пятый слайд</h1>
-                        <p class="slide__text">Текст для пятый слайда</p>
-                        <button class="slide__button button button--primary">Оставить заявку</button>
+                        <p class="slide__text">Текст для пятого слайда</p>
+                        <button class="slide__button button" tabindex="-1">Просто кнопка</button>
                     </li>
                     <li class="slider__item slide">
                         <h1 class="slide__title">Шестой слайд</h1>
-                        <p class="slide__text">Текст для шестой слайда</p>
-                        <button class="slide__button button button--primary">Оставить заявку</button>
+                        <p class="slide__text">Текст для шестого слайда</p>
+                        <button class="slide__button button button--primary" tabindex="-1">Просто кнопка</button>
                     </li>
                 </ul>
             </div>
             <div class="slider__controls">
-                <button class="slider__button slider__button--next" aria-label="Следующий слайд"></button>
+                <div class="circle"> 
+                    <svg width="50" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <g transform="translate(24,24)">
+                            <circle r="22" class="circle__base"/>
+                            <g transform="rotate(-90)">
+                                <circle r="22" class="circle__progress"/>
+                            </g>
+                        </g>
+                    </svg>
+                    <button class="slider__button circle__button slider__button--next" aria-label="Следующий слайд"></button>
+                </div>
+                
                 <button class="slider__button slider__button--prev" aria-label="Предыдущий слайд"></button>
             </div>
             <div class="slider__pagination pagination">
@@ -119,38 +136,38 @@
                 </ol>
             </div>
         </section>
-        <section class="price-count" id="calculator"> 
-            <h2 class="price-count__title">Рассчитайте стоимость автомобиля в лизинг</h2>
-            <form class="price-count__form" action="#" method="POST">
-                <ul class="price-count__list">
-                    <li class="price-count__item">
-                        <label class="price-count__label" for="credit">Желаемая сумма кредита</label>
-                        <div class="price-count__item-container">
-                            <input class="price-count__input" id="credit" name="credit" type="text" placeholder="3 300 000">
-                            <span class="price-count__currency">₽</span>
-                            <div class="price-count__range price-count__range--credit range">
+        <section class="calculator" id="calculator"> 
+            <h2 class="calculator__title">Рассчитайте стоимость автомобиля в лизинг</h2>
+            <form class="calculator__form" action="#" method="POST">
+                <ul class="calculator__list">
+                    <li class="calculator__item">
+                        <label class="calculator__label" for="credit">Желаемая сумма кредита</label>
+                        <div class="calculator__item-container">
+                            <input class="calculator__input" id="credit" name="credit" type="text" placeholder="3 300 000">
+                            <span class="calculator__currency">₽</span>
+                            <div class="calculator__range calculator__range--credit range">
                                 <div class="range__line"></div>
                                 <div class="range__pin" tabindex="1"></div>
                             </div>
                         </div>
                     </li>
-                    <li class="price-count__item">
-                        <label class="price-count__label" for="initial-payment">Первоначальный взнос</label>
-                        <div class="price-count__item-container price-count__item-container--payment">
-                            <input class="price-count__input price-count__input--payment" id="initial-payment" name="initial-payment" type="text" placeholder="10%">
-                            <span class="price-count__payment-result">420 000 ₽</span>
-                            <div class="price-count__range price-count__range--initial-payment range">
+                    <li class="calculator__item">
+                        <label class="calculator__label" for="initial-payment">Первоначальный взнос</label>
+                        <div class="calculator__item-container calculator__item-container--payment">
+                            <input class="calculator__input calculator__input--payment" id="initial-payment" name="initial-payment" type="text" placeholder="10%">
+                            <span class="calculator__payment-result">420 000 ₽</span>
+                            <div class="calculator__range calculator__range--initial-payment range">
                                 <div class="range__line"></div>
                                 <div class="range__pin" tabindex="1"></div>
                             </div>
                         </div>              
                     </li>
-                    <li class="price-count__item">
-                        <label class="price-count__label" for="term">Срок лизинга</label>
-                        <div class="price-count__item-container price-count__item-container--term">
-                            <input class="price-count__input" id="term" name="term" type="text">
-                            <span class="price-count__term">мес.</span>
-                            <div class="price-count__range price-count__range--term range">
+                    <li class="calculator__item">
+                        <label class="calculator__label" for="term">Срок лизинга</label>
+                        <div class="calculator__item-container calculator__item-container--term">
+                            <input class="calculator__input" id="term" name="term" type="text">
+                            <span class="calculator__term">мес.</span>
+                            <div class="calculator__range calculator__range--term range">
                                 <div class="range__line"></div>
                                 <div class="range__pin" tabindex="1"></div>
                             </div>
@@ -158,60 +175,64 @@
                         
                     </li>
                 </ul>
-                <ul class="price-count__result-list">
-                    <li class="price-count__result-item">
-                        <p class="price-count__result-text">Сумма договора лизинга</p>
-                        <p class="price-count__result price-count__result--sum">10000</p>
+                <ul class="calculator__result-list">
+                    <li class="calculator__result-item">
+                        <p class="calculator__result-text">Сумма договора лизинга</p>
+                        <p class="calculator__result calculator__result--sum">10000</p>
                     </li>
-                    <li class="price-count__result-item">
-                        <p class="price-count__result-text">Ежемесячный платеж от</p>
-                        <p class="price-count__result price-count__result--payment">1000</p>
+                    <li class="calculator__result-item">
+                        <p class="calculator__result-text">Ежемесячный платеж от</p>
+                        <p class="calculator__result calculator__result--payment">1000</p>
                     </li>
                 </ul>
-                <button class="price-count__submit button button button--primary button-apply">Оставить заявку</button>
+                <button class="calculator__submit button button button--primary">Оставить заявку</button>
             </form>
         </section> 
     </main>
-    <div class="overlay overlay--closed">
-        <section class="modal modal--closed">
-            <h2 class="modal__title">Онлайн-заявка</h2>
-            <p class="modal__text">Заполните форму, и мы вскоре свяжемся с вами, чтобы ответить на все вопросы</p>
-            <form class="modal__form" action="#" method="POST">
-                <ul class="modal__form-list">
-                    <li class="modal__form-item">
-                        <input class="modal__input" id="tel" name="tel" type="tel" required>
-                        <label class="modal__label modal__label--tel" for="tel">Телефон<span class="modal__star">*</span></label>
-                        <p class="modal__error">Неправильно заполнено поле</p>
-                    </li>
-                    <li class="modal__form-item">
-                        <input class="modal__input" id="name" name="name" type="text" required>
-                        <label class="modal__label" for="name">Имя</label>
-                        <p class="modal__error">Неправильно заполнено поле</p>
-                    </li>
-                </ul>
-                <div class="modal__submit-container">
-                <button class="modal__submit button button--primary">Оставить заявку</button>
-                    <p class="modal__agreement">Нажимая на кнопку «Оставить заявку», я даю согласие 
-                        <a href="#" class="modal__agreement-link" target="_blank">на обработку персональных данных</a>
-                    </p>
-                </div>
-            </form>
-            <ul class="modal__social-list">
-                <li class="modal__social-item">
-                    <a href="#" class="modal__social-link modal__social-link--whatsapp" aria-label="Вотсап"></a>
+    <div class="overlay overlay--closed"></div>
+    <section class="modal modal--closed">
+        <h2 class="modal__title">Онлайн-заявка</h2>
+        <p class="modal__text">Заполните форму, и мы вскоре свяжемся с вами, чтобы ответить на все вопросы</p>
+        <form class="modal__form" action="#" method="POST">
+            <ul class="modal__form-list">
+                <li class="modal__form-item">
+                    <input class="modal__input" id="tel" name="tel" type="tel" required>
+                    <label class="modal__label modal__label--tel" for="tel">Телефон<span class="modal__star">*</span></label>
+                    <p class="modal__error">Неправильно заполнено поле</p>
                 </li>
-                <li class="modal__social-item">
-                    <a href="#" class="modal__social-link modal__social-link--telegram" aria-label="Телеграм"></a>
+                <li class="modal__form-item">
+                    <input class="modal__input" id="name" name="name" type="text" required>
+                    <label class="modal__label" for="name">Имя</label>
+                    <p class="modal__error">Неправильно заполнено поле</p>
                 </li>
             </ul>
-            <button class="modal__close" aria-label="Закрыть окно"></button>
-        </section>
-    </div>
+            <div class="modal__submit-container">
+            <button class="modal__submit button button--primary">Оставить заявку</button>
+                <p class="modal__agreement">Нажимая на кнопку «Оставить заявку», я даю согласие 
+                    <a href="#" class="modal__agreement-link" target="_blank">на обработку персональных данных</a>
+                </p>
+            </div>
+        </form>
+        <ul class="modal__social-list">
+            <li class="modal__social-item">
+                <a href="#" class="modal__social-link modal__social-link--whatsapp" target="_blank" aria-label="Вотсап"></a>
+            </li>
+            <li class="modal__social-item">
+                <a href="#" class="modal__social-link modal__social-link--telegram" target="_blank" aria-label="Телеграм"></a>
+            </li>
+        </ul>
+        <button class="modal__close" aria-label="Закрыть окно"></button>
+    </section>
+      <script>
+            
+
+      </script>
     <script src="js/menu.js"></script>
     <script src="js/sllider.js"></script>
     <script src="js/calculator.js"></script>
     <script src="js/popup.js"></script>
-    <script src="js/inputmask.min.js"></script>
+    <script src="js/plugins/inputmask.min.js"></script>
     <script src="js/mask.js"></script>
+    <script src="js/loading.js"></script>
  </body>
 </html>

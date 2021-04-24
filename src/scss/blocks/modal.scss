@@ -2,6 +2,7 @@
     position: fixed;
     bottom: 0;
     left: 0;
+    z-index: 200;
     width: 100%;
     padding: 25px 20px;
     max-height: 80vh;
@@ -10,11 +11,13 @@
 
     background-color: #fff;
     border-radius: 32px 32px 0 0;
-    animation-name: show;
-    animation-duration: 0.5s;
+
+    transition: transform 1s ease-in-out,
+                visibility 1s ease-in-out;
 
     &--closed {
-        display: none;
+        visibility: hidden;
+        transform: translateY(100vh);
     }
 
     &__title {
@@ -67,6 +70,9 @@
         line-height: 24px;
         font-weight: 700;
         color: rgba(#575757, 1);
+
+        transition: font-size 0.1s ease-in-out,
+                    top 0.1s ease-in-out;
     }
 
     &__star {
@@ -292,9 +298,36 @@
         }
     
         &__submit {
-            order: 2;
             width: max-content;
             margin-bottom: 0;
+            padding: 12px 20px;
+
+            font-family: "Gilroy";
+            font-weight: 700;
+        
+            border-radius: 40px;
+            cursor: pointer;
+            order: 2;
+            transition: background-color 0.2s ease-in-out,
+                    color 0.2s ease-in-out;
+        }
+
+        &__submit:hover,
+        &__submit:focus {
+            color: #fff;
+
+            background-color: #111;
+        }
+
+        &__submit:active {
+            background-color: #575757;
+        }
+
+        &__submit:disabled {
+            color: rgba(#fff, 0.4);
+
+            background-color: rgba(#ff9514, 0.4);
+            cursor: not-allowed;
         }
     
         &__agreement {
@@ -330,9 +363,4 @@
     .modal {
         padding: 160px 400px;
     }
-}
-
-@keyframes show {
-    0% {transform: translateY(100%)}
-    100% {transform: translateY(0)}
 }

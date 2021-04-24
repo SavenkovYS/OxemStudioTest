@@ -58,16 +58,19 @@
             border: 2px solid #fff;
             border-radius: 50%;
             cursor: pointer;
+            transition: background-color 0.1s ease-in-out;
         }
 
         &__button--next {
             order: 1;
-            width: 48px;
-            height: 48px;
+            width: 42px;
+            height: 42px;
+
+            border: none;
         }
 
         &__button--prev {
-            order: 0;
+            order: -1;
             width: 24px;
             height: 24px;
         }
@@ -85,8 +88,8 @@
         }
 
         &__button--next::before {
-            top: 16px;
-            right: 19px;
+            top: 15px;
+            right: 18px;
             width: 12px;
             height: 12px;
 
@@ -102,20 +105,18 @@
             transform: rotate(45deg);
         }
 
-        &__progress {
-            width: 48px; 
-            height: 48px;
-            transform: translate(-50%, -50%) rotate(-90deg);
+        &__button:hover,
+        &__button:focus {
+            background-color: #303030;
         }
 
-        &__circle {
-            fill: transparent;
-            stroke: red;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-dasharray: 150;
-            stroke-dashoffset: 500;
-            animation: animate 10s linear infinite;
+        &__button:active {
+            background-color: #4c4c4c;
+        }
+
+        &__button:disabled {
+            background-color: transparent;
+            opacity: 0.4;
         }
     }
 }

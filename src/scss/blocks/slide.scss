@@ -1,4 +1,6 @@
 .slide {
+    padding-left: 20px;
+
     &__title {
         margin: 0;
         margin-bottom: 30px;
@@ -13,12 +15,49 @@
         min-width: 175px;
         padding: 12px 20px;
 
+        font-family: "Gilroy";
+        font-weight: 700;
         font-size: 16px;
         line-height: 24px;
+        color: #fff;
+    
+        border-radius: 40px;
+        cursor: pointer;
+        background-color: #ff9514;
+        border: none;
+        transition: background-color 0.2s ease-in-out,
+                    color 0.2s ease-in-out;
+    }
+
+    &__button:hover,
+    &__button:focus {
+        color: rgba(#fff, 0.7);
+
+        background-color: rgba(#ff9514, 0.7);
+    }
+
+    &__button:active {
+        background-color: #575757;
+    }
+
+    &__button:disabled {
+        color: rgba(#fff, 0.4);
+
+        background-color: rgba(#ff9514, 0.4);
+        cursor: not-allowed;
     }
 
     &__text {
         display: none;
+    }
+    
+    &__loading-icon {
+        display: none;
+
+        animation-name: loading;
+        animation-duration: 2s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
     }
 }
 
@@ -50,5 +89,17 @@
             font-size: 30px;
             line-height: 36px;
         }
+    }
+}
+
+@keyframes loading {
+    0% {
+        transform: rotate(0);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
     }
 }

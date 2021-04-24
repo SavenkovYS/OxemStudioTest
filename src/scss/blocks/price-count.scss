@@ -1,4 +1,4 @@
-.price-count {
+.calculator {
     padding: 60px 20px 0;
 
     &__title {
@@ -165,11 +165,31 @@
         border: none;
         border-radius: 40px;
         cursor: pointer;
+        transition: background-color 0.2s ease-in-out,
+                    color 0.2s ease-in-out;
+    }
+
+    &__submit:hover,
+    &__submit:focus {
+        color: #fff;
+
+        background-color: #111;
+    }
+
+    &__submit:active {
+        background-color: #575757;
+    }
+
+    &__submit:disabled {
+        color: rgba(#fff, 0.4);
+
+        background-color: rgba(#ff9514, 0.4);
+        cursor: not-allowed;
     }
 }
 
 @media (min-width: 768px) {
-    .price-count {
+    .calculator {
         padding: 80px 0 0;
     
         &__title {
@@ -242,7 +262,7 @@
 }
 
 @media (min-width: 1024px) {
-    .price-count {
+    .calculator {
         padding: 80px 0 100px;
 
         &__title {
@@ -252,7 +272,7 @@
 }
 
 @media (min-width: 1440px) {
-    .price-count {
+    .calculator {
         padding: 100px 0 130px;
 
         &__form { 

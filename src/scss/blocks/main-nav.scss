@@ -69,6 +69,26 @@
         border: none;
         border-radius: 40px;
         cursor: pointer;
+        transition: background-color 0.2s ease-in-out,
+                    color 0.2s ease-in-out;
+    }
+
+    &__apply:hover,
+    &__apply:focus {
+        color: #fff;
+
+        background-color: #111;
+    }
+
+    &__apply:active {
+        background-color: #575757;
+    }
+
+    &__apply:disabled {
+        color: rgba(#fff, 0.4);
+
+        background-color: rgba(#ff9514, 0.4);
+        cursor: not-allowed;
     }
 }
 
@@ -168,6 +188,15 @@
             font-size: 16px;
             line-height: 24px;
         }
+
+        &__subitem:last-child &__sublink {
+            border-radius: 0 0 15px 15px;
+        }
+
+        &__sublink:hover,
+        &__sublink:focus {
+            background-color: #F1F1F1;
+        }
     
         &__apply {
             min-width: max-content;
@@ -179,6 +208,26 @@
 
             background-color: #fff;
             border: 1px solid #ff9514;
+        }
+        
+        &__apply:hover,
+        &__apply:focus {
+            color: #fff;
+        
+            background-color: #ff9514;
+        }
+        
+        &__apply:active {
+            background-color: #ffa83d;
+        
+            border-color: #ffa83d;
+        }
+        
+        &__apply:disabled {
+            color: rgba(#ff9514, 0.4);
+        
+            background-color: rgba(#fff, 0.4);
+            border: rgba(#ff9514, 0.4);
         }
     }
 }
