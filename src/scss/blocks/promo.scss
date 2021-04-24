@@ -4,7 +4,7 @@
     color: #fff;
 
     background-color: #000;
-    background-image: url('../../img/header-bg-sm.jpg');
+    background-image: url('../img/header-bg-sm.jpg');
     background-repeat: no-repeat;
     background-size: auto 260px;
     background-position: left top;
@@ -15,7 +15,7 @@
     .promo {
         padding: 230px 45px 25px 25px;
     
-        background-image: url('../../img/header-bg-md.jpg');
+        background-image: url('../img/header-bg-md.jpg');
         background-size: auto;
         background-position: center top;
     }
@@ -25,14 +25,14 @@
     .promo {
         padding: 70px 70px 45px 50px;
     
-        background-image: url('../../img/header-bg-lg.jpg');
+        background-image: url('../img/header-bg-lg.jpg');
         background-position: right bottom 20px;
     }
 }
 
 @media (min-width: 1440px) {
     .promo {
-        background-image: url('../../img/header-bg-xl.jpg');
+        background-image: url('../img/header-bg-xl.jpg');
         background-position: right bottom;
     }
 }
