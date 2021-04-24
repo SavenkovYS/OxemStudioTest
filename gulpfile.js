@@ -14,7 +14,7 @@ var server = require("browser-sync").create();
 var uglify = require('gulp-uglify');
 
 gulp.task("style", function() {
-  return gulp.src("src/scss/style.scss")
+  return gulp.src("src/scss/style.scss") 
     .pipe(plumber())
     .pipe(sass())
     .pipe(postcss([
